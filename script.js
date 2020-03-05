@@ -214,7 +214,7 @@ $("#city-list").on("click", "button", function () {
                     id: "weather-icon",
                     src: dayWeatherIcon,
                     width: 50
-                })
+                });
                 var dayTempEl = Math.floor(day.main.temp);
                 var dayCard = $("<div>").addClass("card weather-card col-lg bg-info text-white mr-md-2 mb-3");
                 var dayDate = $("<h5>").attr("style", "font-size:100%").addClass("card-title text-nowrap").text.date;
