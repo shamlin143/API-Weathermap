@@ -1,0 +1,116 @@
+body{
+	font-family: sans-serif;
+	background-color: white;
+	margin: 0;
+	padding: 0;
+	
+		background-image: url('/Assets/island-during-golden-hour-and-upcoming-storm-1118873.jpg');
+		background-repeat: no-repeat;
+		background-attachment: fixed;  
+		background-size: cover;
+	  
+}
+
+#nav_bar{
+	height: 125px;
+	margin-bottom: 0;
+	padding: 0;
+	background-color:#fff;
+	border: none;
+	z-index: 10000;
+}
+
+.app-name{
+	color: teal !important;
+	font-size: 40px;
+	font-weight: bolder;
+}
+
+#nav_list li a{
+	color: teal;
+	font-weight: bolder;
+	font-size: 40px; 
+	margin-top: 40px;
+	}
+
+#logo{
+	max-height: 115px;
+	max-width: 175px;
+	margin-right: 15px;
+	display: inline-block;
+	margin-top: -15px;
+}
+
+#tagline{
+	color: black;
+	padding-top: 4%;
+	font-size: 40px;
+}
+#tagline-2{
+	color: black;
+	padding-top: 2%;
+	padding-bottom: 5%;
+	font-family: 'Indie Flower',cursive;
+	font-size: 2em;
+}
+
+ul#list_inline{
+	color: black;
+	font-size: 30px;
+	text-align: center;
+
+}
+
+.jumbo h2{
+	font-size: 40px;
+	font-weight: lighter;
+	text-align: center;
+}
+
+#city{
+	width: 60%;
+	margin: auto;
+	text-align: center;
+	color: teal;
+}
+.jumbo{
+	margin-bottom: 0px;
+	background-color: grey;
+	color: rgb(255, 255, 255);
+}
+input[type='text'],#submitCity{
+	height: 30px;
+	font-size: 30pxem;
+	margin-bottom: 8%;
+	color: rgb(34, 0, 128);
+	background-color: grey;
+}
+
+label{
+	font-size: 40px;
+	margin-top: 2%;
+}
+table{
+	font-size: 25px;
+}
+
+#weather-data{
+	min-width:200px;
+	background-color: grey;
+	color: rgb(34, 0, 128);
+	text-align: center;
+	border-radius: 5px;
+	font-size: 35px;
+
+}
+
+#weather-data h3{
+	padding-top: 3%;
+	width: 400px;
+	color: teal;
+}
+#weather-data p:last-child{
+	padding-bottom: 3%;
+}
+
+ 
