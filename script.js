@@ -1,20 +1,11 @@
-<<<<<<< HEAD
 var citiesListEl = $("#city-list");
 var cities = [];
-=======
-var citiesListEl = $("#city-list")
-var cities = []
->>>>>>> 89067d2a85e6dcd042d554ada3d9e754f37f636f
 var cityName, fiveDayQueryURL, weatherData, currentWeatherIcon, currentWeatherIconEl, weathericon, currentTemp, weatherCard, cityDateEl, tempEl, humidityEl, windspeedEl, fiveDayQueryParams, fiveDayList;
 function buildQueryUrl() {
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?";
     var queryParams = { "appid": "83b1aee0a8eda152ab3f7c21f3bc0007" };
     queryParams.q = $("#search-term").val().trim();
-<<<<<<< HEAD
     queryParams.units = "imperial";
-=======
-    queryParams.units = "imperial"
->>>>>>> 89067d2a85e6dcd042d554ada3d9e754f37f636f
     return queryURL + $.param(queryParams);
 }
 function buildFiveDayQueryUrl() {
@@ -32,11 +23,7 @@ function renderCities() {
    
     for (var i = 0; i < cities.length; i++) {
         var city = cities[i];
-<<<<<<< HEAD
         var li = $("<li>");
-=======
-        var li = $("<li>")
->>>>>>> 89067d2a85e6dcd042d554ada3d9e754f37f636f
         var button = $("<button>");
         button.text(city);
         button.attr("data-index", i);
@@ -63,11 +50,7 @@ $(".search-button").on("click", function (event) {
     if (searchHistory === "") {
         return;
     };
-<<<<<<< HEAD
     cities.push(searchHistory);
-=======
-    cities.push(searchHistory)
->>>>>>> 89067d2a85e6dcd042d554ada3d9e754f37f636f
     localStorage.setItem("cities", JSON.stringify(cities));
     queryURL = buildQueryUrl();
     var fiveDayQueryURL;
@@ -78,18 +61,11 @@ $(".search-button").on("click", function (event) {
     }).then(function (data) {
         function buildCurrentWeatherCard() {
             $(weatherCard).append(cityDateEl);
-<<<<<<< HEAD
             $(weatherCard).append(weathericon);
             $(weatherCard).append(tempEl);
             $(weatherCard).append(humidityEl);
             $(weatherCard).append(windspeedEl);
             $(weatherCard).append(uvIndexEl);
-=======
-            $(weatherCard).append(weathericon)
-            $(weatherCard).append(tempEl);
-            $(weatherCard).append(humidityEl);
-            $(weatherCard).append(windspeedEl);
->>>>>>> 89067d2a85e6dcd042d554ada3d9e754f37f636f
             $("#current-day-forecast").append(weatherCard);
         }
         var date = moment().format("MMM Do YY");
@@ -137,22 +113,14 @@ $(".search-button").on("click", function (event) {
                 var dayTemp = $("<p>").addClass("card-text").text("Temp: " + dayTempEl + " F");
                 var dayHum = $("<p>").addClass("card-text text-nowrap").text("Humidity: " + day.main.humidity);
                 $(dayCard).append(dayDate);
-<<<<<<< HEAD
                 $(dayCard).append(dayIconEl);
-=======
-                $(dayCard).append(dayIconEl)
->>>>>>> 89067d2a85e6dcd042d554ada3d9e754f37f636f
                 $(dayCard).append(dayTemp);
                 $(dayCard).append(dayHum);
                 $("#five-day-forecast").append(dayCard);
             }
         })
         var uvIndexEl;
-<<<<<<< HEAD
         var uvQueryURL = "https://api.openweathermap.org/data/2.5/uvi?" + "lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&appid=0d2a570544db7d02e47387057bd868ca";
-=======
-        var uvQueryURL = "https://api.openweathermap.org/data/2.5/uvi?" + "lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&appid=0d2a570544db7d02e47387057bd868ca"
->>>>>>> 89067d2a85e6dcd042d554ada3d9e754f37f636f
         buildCurrentWeatherCard();
 
         $.ajax({
@@ -199,11 +167,7 @@ $("#city-list").on("click", "button", function () {
         weatherData = data;
         // current weather card
         currentWeatherIcon = data.weather[0].icon;
-<<<<<<< HEAD
         date = moment().format("MMM Do YYYY");
-=======
-        date = moment().format("MMM Do YY");
->>>>>>> 89067d2a85e6dcd042d554ada3d9e754f37f636f
         currentWeatherIconEl = "https://openweathermap.org/img/wn/" + currentWeatherIcon + "@2x.png";
         weathericon = $("<img/>", {
             id: "weather-icon",
@@ -217,11 +181,7 @@ $("#city-list").on("click", "button", function () {
         humidityEl = $("<p>").addClass("card-text text-nowrap").text("Humidity: " + weatherData.main.humidity + " %");
         windspeedEl = $("<p>").addClass("card-text").text("Windspeed: " + weatherData.wind.speed + " mph");
         var uvIndexEl;
-<<<<<<< HEAD
         var uvQueryURL = "https://api.openweathermap.org/data/2.5/uvi?" + "lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&appid=83b1aee0a8eda152ab3f7c21f3bc0007";
-=======
-        var uvQueryURL = "https://api.openweathermap.org/data/2.5/uvi?" + "lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&appid=83b1aee0a8eda152ab3f7c21f3bc0007"
->>>>>>> 89067d2a85e6dcd042d554ada3d9e754f37f636f
         buildCurrentWeatherCardHist();
         $.ajax({
             url: uvQueryURL,
@@ -246,11 +206,7 @@ $("#city-list").on("click", "button", function () {
             method: "GET"
         }).then(function (fiveData) {
             fiveDayList = fiveData.list;
-<<<<<<< HEAD
             for (var i = 4; i < fiveDayList.length; i += 8) {
-=======
-            for (var i = 0; i < fiveDayList.length; i += 8) {
->>>>>>> 89067d2a85e6dcd042d554ada3d9e754f37f636f
                 var day = fiveDayList[i];
                 var dayIcon = day.weather[0].icon;
                 var dayWeatherIcon = "https://openweathermap.org/img/wn/" + dayIcon + ".png";
@@ -259,7 +215,6 @@ $("#city-list").on("click", "button", function () {
                     src: dayWeatherIcon,
                     width: 50
                 })
-<<<<<<< HEAD
                 console.log(fiveDayList);
                 var dayTempEl = Math.floor(day.main.temp);
                 var dayCard = $("<div>").addClass("card weather-card col-lg bg-info text-white mr-md-2 mb-3");
@@ -280,19 +235,6 @@ $("#city-list").on("click", "button", function () {
                 $(dayCard).append(dayHum);
                 $("#five-day-forecast").append(dayCard);
                 //console.log(weatherData);
-=======
-                console.log(fiveData);
-                var dayTempEl = Math.floor(day.main.temp);
-                var dayCard = $("<div>").addClass("card weather-card col-lg bg-info text-white mr-md-2 mb-3");
-                var dayDate = $("<h5>").attr("style", "font-size:100%").addClass("card-title text-nowrap").text(moment().add(1,'day').format('L'));
-                var dayTemp = $("<p>").addClass("card-text").text("Temp: " + dayTempEl + " F");
-                var dayHum = $("<p>").addClass("card-text text-nowrap").text("Humidity: " + day.main.humidity);
-                $(dayCard).append(dayDate);
-                $(dayCard).append(dayIconEl);
-                $(dayCard).append(dayTemp);
-                $(dayCard).append(dayHum);
-                $("#five-day-forecast").append(dayCard);
->>>>>>> 89067d2a85e6dcd042d554ada3d9e754f37f636f
             }
         })
     })
