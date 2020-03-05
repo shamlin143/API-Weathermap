@@ -215,26 +215,18 @@ $("#city-list").on("click", "button", function () {
                     src: dayWeatherIcon,
                     width: 50
                 })
-                console.log(fiveDayList);
                 var dayTempEl = Math.floor(day.main.temp);
                 var dayCard = $("<div>").addClass("card weather-card col-lg bg-info text-white mr-md-2 mb-3");
                 var dayDate = $("<h5>").attr("style", "font-size:100%").addClass("card-title text-nowrap").text.date;
                 var dayTemp = $("<p>").addClass("card-text").text("Temp: " + dayTempEl + " F");
                 var dayUvIndexEl = $("<p>").addClass("card-text text-nowrap").text("UV Index: " + uvIndexEl);
                 var dayHum = $("<p>").addClass("card-text text-nowrap").text("Humidity: " + day.main.humidity);
-                var today = moment().format("MMM Do YYYY");
-                function incrementDate() {
-                    for(var i = 0; i < 5; i++ ) {                         
-                 }           
-                };
-                incrementDate(today);
                 $(dayCard).append(dayIconEl);
-                $(dayCard).append(today);
+                $(dayCard).append(moment(fiveDayList[i].dt_txt.toString()).format("MMM Do YYYY"));
                 $(dayCard).append(dayTemp);
                 $(dayCard).append(dayUvIndexEl);
                 $(dayCard).append(dayHum);
                 $("#five-day-forecast").append(dayCard);
-                //console.log(weatherData);
             }
         })
     })
